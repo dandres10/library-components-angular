@@ -105,6 +105,37 @@
           }
         }
       }
+    },
+    "synergy-library": {
+      "projectType": "library",
+      "root": "projects/synergy-library",
+      "sourceRoot": "projects/synergy-library/src",
+      "prefix": "leg",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/synergy-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/synergy-library/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/synergy-library/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/synergy-library/src/test.ts",
+            "tsConfig": "projects/synergy-library/tsconfig.spec.json",
+            "karmaConfig": "projects/synergy-library/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "library-angular-front"

@@ -16,6 +16,12 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
+    "paths": {
+      "synergy-library": [
+        "dist/synergy-library/synergy-library",
+        "dist/synergy-library"
+      ]
+    },
     "lib": [
       "es2018",
       "dom"
