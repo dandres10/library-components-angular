@@ -1,0 +1,85 @@
+@import "../../styles/styles.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/mixings.scss";
+
+
+.big {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: auto;
+
+  &__input {
+    height: 2.5rem;
+    border-radius: 0.3rem;
+    border: 0.1rem $secondary-color-dissipated solid;
+    padding: 0rem 2rem 0rem 0.7rem;
+    width: auto;
+    @include inputs();
+  }
+
+  &__icon {
+    @include zoom(scale(1.2));
+    position: absolute;
+    right: 3px;
+    line-height: 2.5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+.normal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: auto;
+
+  &__input {
+    height: 2rem;
+    border-radius: 0.3rem;
+    border: 0.1rem $secondary-color-dissipated solid;
+    padding: 0rem 2rem 0rem 0.7rem;
+    width: auto;
+    @include inputs();
+  }
+
+  &__icon {
+    @include zoom(scale(1.2));
+    position: absolute;
+    right: 3px;
+    line-height: 2rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+.small {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: auto;
+
+  &__input {
+    height: 1.5rem;
+    border-radius: 0.3rem;
+    border: 0.1rem $secondary-color-dissipated solid;
+    padding: 0rem 2rem 0rem 0.7rem;
+    width: auto;
+    @include inputs();
+  }
+
+  &__icon {
+    @include zoom(scale(1.2));
+    position: absolute;
+    right: 3px;
+    line-height: 1.5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    cursor: pointer;
+  }
+}

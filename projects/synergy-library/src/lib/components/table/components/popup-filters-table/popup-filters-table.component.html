@@ -1,0 +1,17 @@
+<!-- <div class="container" [style.left]="left + 'px'" [style.top]="top + 'px'"> -->
+<div class="container" [style.left]="left + 'px'" [style.top]="top + 'px'">
+
+  <div class="container__title">Filtros</div>
+  <hr class="container__line">
+
+  <div class="container__filtro" *ngFor="let item of data;trackBy:trackByTableMovilHeadersId">
+    <div class="container__filtro__text">{{item.value}}</div>
+    <div class="container__filtro__action">
+      <input class="container__filtro__action__input" type="text" name="filter" id="sdf" autocomplete='nope'>
+    </div>
+  </div>
+
+  <div class="container__button">
+    <button (click)="filter()">Filtrar</button>
+  </div>
+</div>

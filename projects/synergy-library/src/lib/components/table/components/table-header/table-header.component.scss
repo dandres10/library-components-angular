@@ -1,0 +1,51 @@
+@import "../../../../styles/styles.scss";
+@import "../../../../styles/variables.scss";
+@import "../../../../styles/mixings.scss";
+
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: auto;
+    min-height: 3rem;
+    background-color: #c7c7c7;
+    border-radius: 0.2rem;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+
+    &__filter{
+      position: absolute;
+      padding-left: 0.8rem;
+      cursor: pointer;
+      padding-top: 0.2rem;
+      @include zoom(scale(1.1));
+    }
+
+    &__value--container {
+      display: flex;
+      width: 100%;
+      max-width: auto;
+      min-width: 5rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+
+      &__value {
+        display: flex;
+        flex-direction: row;
+        margin: 0.5rem 0rem 0.5rem 0rem;
+        @include zoom(scale(1.1));
+
+        &:first-child {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+
+        }
+      }
+    }
+  }

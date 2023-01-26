@@ -1,1 +1,29 @@
-<leg-table></leg-table>
+<div class="ancho" #table>
+    <!-- <leg-table [data]="dataTable" legCoreElement></leg-table> -->
+    <hr>
+    <leg-button [data]="btnData"></leg-button>
+    <hr>
+    <leg-checkbox [data]="checkboxData"></leg-checkbox>
+    <hr>
+
+    <form (ngSubmit)="submitData()" autocomplete='off'>
+        <leg-input-text [data]="inputText"></leg-input-text>
+        <br>
+        <leg-input-text [data]="inputText2"></leg-input-text>
+        <br>
+        <leg-input-select [data]="inputSelect1">
+        </leg-input-select>
+
+        <leg-button [data]="btnData"></leg-button>
+    </form>
+
+
+
+
+    <hr>
+</div>
+
+
+
+
+<!-- <button (click)="btn()">enviar data</button> -->

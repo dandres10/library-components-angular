@@ -1,0 +1,14 @@
+@import "../../styles/styles.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/mixings.scss";
+
+svg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 8px;
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  @include zoom(scale(1.2));
+}

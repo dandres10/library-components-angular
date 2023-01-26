@@ -1,0 +1,72 @@
+@import "../../styles/styles.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/mixings.scss";
+
+.leg__button {
+  &--primary,
+  &--secondary,
+  &--tertiary,
+  &--failed {
+    height: 2rem;
+    width: auto;
+    border-radius: 0.2rem;
+    border: none;
+    cursor: pointer;
+    padding: 0rem 1rem 0rem 1rem;
+  }
+
+  &--primary {
+    background-color: $primary-main;
+    color: $white;
+    &:hover {
+      background-color: $primary-main-dissipated;
+    }
+
+    &:active {
+      background-color: $primary-main;
+      transition: 100ms;
+    }
+  }
+
+  &--secondary {
+    background-color: $secondary-color;
+    color: $white;
+
+    &:hover {
+      background-color: $secondary-color-dissipated;
+    }
+
+    &:active {
+      background-color: $secondary-color;
+      transition: 100ms;
+    }
+  }
+
+  &--tertiary {
+    background-color: $tertiary-color;
+    color: $gray-text;
+
+    &:hover {
+      background-color: $tertiary-color;
+    }
+
+    &:active {
+      background-color: $tertiary-color-dissipated;
+      transition: 100ms;
+    }
+  }
+
+  &--failed {
+    background-color: $failed-color;
+    color: $white;
+
+    &:hover {
+      background-color: $failed-color-dissipated;
+    }
+
+    &:active {
+      background-color: $failed-color;
+      transition: 100ms;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+@import "../../../../styles/styles.scss";
+@import "../../../../styles/variables.scss";
+
+.row__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: auto;
+    min-height: 2rem;
+    background-color: white;
+    align-items: center;
+    border-radius: 0.2rem;
+    border: 0.01rem rgb(190, 190, 190) solid;
+    margin-bottom: 0.3rem;
+
+    &:hover {
+      border: 0.01rem rgb(3, 3, 3) solid;
+      cursor: pointer;
+    }
+
+    &__value--container {
+      display: flex;
+      width: 100%;
+      max-width: auto;
+      min-width: 5rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+
+      &__value {
+        display: flex;
+        flex-direction: row;
+        margin-right: 0.5rem;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .active {
+    border: 0.01rem rgb(3, 3, 3) solid;
+    cursor: pointer;
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    width: 99%;
+    border: 0.01rem rgb(190, 190, 190) solid;
+    border-radius: 0.2rem;
+    margin-bottom: 0.3rem;
+    height: auto;
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
+      justify-content: space-between;
+      border-radius: 0.2rem;
+      border: 0.01rem rgb(190, 190, 190) solid;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      align-items: center;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+
+      &:first-child {
+        margin-top: 0.5rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0.5rem;
+      }
+
+      &__attribute {
+        margin-right: 1rem;
+        width: 20%;
+      }
+
+      &__value {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .row__container {
+    &__detail {
+      &__container {
+        flex-wrap: wrap;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        &__attribute {
+          width: 100%;
+          padding-bottom: 0.5rem;
+        }
+        &__value {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

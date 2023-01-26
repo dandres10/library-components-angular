@@ -1,10 +1,14 @@
 @import "../../styles/styles.scss";
+@import "../../styles/variables.scss";
 
-.color {
-  background-color: $primary-main;
-  width: 20rem;
-  color: white;
-  height: 19px;
-  margin: 0;
-  padding: 0;
+.table__movil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .header {
+    width: 100%;
+  }
+  .row {
+    width: 100%;
+  }
 }

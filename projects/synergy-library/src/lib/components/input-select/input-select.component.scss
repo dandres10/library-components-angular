@@ -1,0 +1,196 @@
+@import "../../styles/styles.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/mixings.scss";
+
+.container {
+  position: relative;
+  width: 20rem;
+  z-index: 1;
+}
+
+.big {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: auto;
+  width: auto;
+  margin-bottom: 0.5rem;
+  &__input {
+    height: 2.5rem;
+    border-radius: 0.3rem;
+    border: 0.1rem $secondary-color-dissipated solid;
+    padding: 0rem 2rem 0rem 0.7rem;
+    cursor: pointer;
+    @include inputs();
+  }
+
+  &__icon {
+    @include zoom(scale(1.2));
+    position: absolute;
+    right: 3px;
+    line-height: 2.5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+.normal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: auto;
+  width: auto;
+  margin-bottom: 0.5rem;
+  &__input {
+    height: 2rem;
+    border-radius: 0.3rem;
+    border: 0.1rem $secondary-color-dissipated solid;
+    padding: 0rem 2rem 0rem 0.7rem;
+    cursor: pointer;
+    @include inputs();
+  }
+
+  &__icon {
+    @include zoom(scale(1.2));
+    position: absolute;
+    right: 3px;
+    line-height: 2rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+.small {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: auto;
+  width: auto;
+  margin-bottom: 0.5rem;
+  &__input {
+    height: 1.5rem;
+    border-radius: 0.3rem;
+    border: 0.1rem $secondary-color-dissipated solid;
+    padding: 0rem 2rem 0rem 0.7rem;
+    cursor: pointer;
+    @include inputs();
+  }
+
+  &__icon {
+    @include zoom(scale(1.2));
+    position: absolute;
+    right: 3px;
+    line-height: 1.5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+.select {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: auto;
+  width: 99.5%;
+  border-radius: 0.3rem;
+  background-color: $white;
+  border: 0.1rem $secondary-color-dissipated solid;
+  z-index: 1000;
+
+  &__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0rem 1rem 0rem 1rem;
+    height: 2rem;
+    border-bottom: 0.2px $secondary-color-dissipated solid;
+    align-items: center;
+
+    &__icon {
+      @include zoom(scale(1.2));
+      cursor: pointer;
+    }
+
+    &__describe{
+      color: $secondary-color;
+    }
+  }
+
+  &__search {
+    padding: 1rem 1rem 0.5rem 1rem;
+    border-bottom: 0.2px $secondary-color-dissipated solid;
+
+    &__clear {
+      padding: 0.5rem 0rem 0.5rem 0rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      color: $secondary-color;
+    }
+  }
+
+  &__items {
+    padding: 1rem 0rem 1rem 0rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 8rem;
+
+    &__item {
+      cursor: pointer;
+      &__text {
+        display: flex;
+        width: 100%;
+        min-height: 1.8rem;
+        max-height: auto;
+        align-items: center;
+        padding-left: 2rem;
+        color: $secondary-color;
+        margin: 0rem 0rem 0.2rem 0rem;
+        &:hover {
+          color: $black;
+        }
+      }
+      &:hover {
+        background-color: $tertiary-color;
+      }
+    }
+
+    &__template{
+      width: 100%;
+      background-color: aqua;
+    }
+  }
+}
+
+.select__items::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.select__items::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+.select__items::-webkit-scrollbar-button:increment,
+.select__items::-webkit-scrollbar-button {
+  display: none;
+}
+
+.select__items::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+.select__items::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+.select__items::-webkit-scrollbar-track {
+  border-radius: 10px;
+}

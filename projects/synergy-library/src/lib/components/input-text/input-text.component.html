@@ -1,0 +1,21 @@
+<div [ngSwitch]="data.size">
+  <form *ngSwitchCase="InputSizeEnum.big" [style]="{'width':data.width}" [formGroup]="data.form" class="big">
+    <input class="big__input" type="text" formControlName={{data.formControlName}} placeholder={{data.placeholder}}>
+    <leg-icon-x *ngIf="data.hasIcon" class="big__icon" (click)="clear()"></leg-icon-x>
+  </form>
+
+  <form *ngSwitchCase="InputSizeEnum.normal" [style]="{'width':data.width}" [formGroup]="data.form" class="normal">
+    <input class="normal__input" type="text" formControlName={{data.formControlName}} placeholder={{data.placeholder}}>
+    <leg-icon-x *ngIf="data.hasIcon" class="normal__icon" (click)="clear()"></leg-icon-x>
+  </form>
+
+  <form *ngSwitchCase="InputSizeEnum.small" [style]="{'width':data.width}" [formGroup]="data.form" class="small">
+    <input class="small__input" type="text" formControlName={{data.formControlName}} placeholder={{data.placeholder}}>
+    <leg-icon-x *ngIf="data.hasIcon" class="small__icon" (click)="clear()"></leg-icon-x>
+  </form>
+
+  <form *ngSwitchDefault [style]="{'width':data.width}" [formGroup]="data.form" class="normal">
+    <input class="normal__input" type="text" formControlName={{data.formControlName}} placeholder={{data.placeholder}}>
+    <leg-icon-x *ngIf="data.hasIcon" class="normal__icon" (click)="clear()"></leg-icon-x>
+  </form>
+</div>

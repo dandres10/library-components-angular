@@ -1,0 +1,36 @@
+@mixin zoom($transform: scale(1.1)) {
+  &:hover {
+    transition: transform 0.3s;
+    transform: $transform;
+  }
+}
+
+@mixin control-overflow-text() {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin box-shadow() {
+  -webkit-box-shadow: -1px 0px 25px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 0px 25px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 0px 25px 0px rgba(0, 0, 0, 0.75);
+}
+
+@mixin inputs() {
+  &:active {
+    border: 0.1rem $primary-main solid;
+    outline: none;
+  }
+
+  &:hover {
+    border: 0.1rem $secondary-color solid;
+    background-color: $tertiary-color;
+    outline: none;
+  }
+
+  &:focus {
+    border: 0.1rem $primary-main solid;
+    outline: none;
+  }
+}

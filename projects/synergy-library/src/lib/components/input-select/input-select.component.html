@@ -1,0 +1,40 @@
+<div class="container" [style]="{'width': data.width}">
+  <div [ngSwitch]="data.size">
+    <form *ngSwitchCase="InputSizeEnum.big" [formGroup]="data.form" class="big">
+      <input class="big__input" type="text" formControlName={{data.formControlName}} [(value)]="currentValue"
+        placeholder={{data.placeholder}} (click)="changeStateShowSelect()" readonly>
+      <leg-icon-down-arrow class="big__icon" (click)="changeStateShowSelect()"></leg-icon-down-arrow>
+    </form>
+    <form *ngSwitchCase="InputSizeEnum.normal" [formGroup]="data.form" class="normal">
+      <input class="normal__input" type="text" formControlName={{data.formControlName}} [(value)]="currentValue"
+        placeholder={{data.placeholder}} (click)="changeStateShowSelect()" readonly>
+      <leg-icon-down-arrow class="normal__icon" (click)="changeStateShowSelect()"></leg-icon-down-arrow>
+    </form>
+    <form *ngSwitchCase="InputSizeEnum.small" [formGroup]="data.form" class="small">
+      <input class="small__input" type="text" formControlName={{data.formControlName}} [(value)]="currentValue"
+        placeholder={{data.placeholder}} (click)="changeStateShowSelect()" readonly>
+      <leg-icon-down-arrow class="small__icon" (click)="changeStateShowSelect()"></leg-icon-down-arrow>
+    </form>
+    <form *ngSwitchDefault [formGroup]="data.form" class="normal">
+      <input class="normal__input" type="text" formControlName={{data.formControlName}} [(value)]="currentValue"
+        placeholder={{data.placeholder}} (click)="changeStateShowSelect()" readonly>
+      <leg-icon-down-arrow class="normal__icon" (click)="changeStateShowSelect()"></leg-icon-down-arrow>
+    </form>
+  </div>
+  <div class="select" *ngIf="showSelect">
+    <div class="select__title">
+      <div></div>
+      <div class="select__title__describe">Seleccionar assignee</div>
+      <leg-icon-x class="select__title__icon" (click)="changeStateShowSelect()"></leg-icon-x>
+    </div>
+    <div class="select__search">
+      <leg-input-text [data]="inputText" (keyup)="changeInput($event)"></leg-input-text>
+      <div class="select__search__clear" (click)="clear()">Quitar seleccion</div>
+    </div>
+    <div class="select__items">
+      <div class="select__items__item" *ngFor="let item of searchList" id={{item.id}} (click)="selected(item)">
+        <div class="select__items__item__text">{{item.value}}</div>
+      </div>
+    </div>
+  </div>
+</div>

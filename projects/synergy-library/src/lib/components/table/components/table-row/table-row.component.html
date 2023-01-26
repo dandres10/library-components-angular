@@ -1,0 +1,36 @@
+<div class="row__container" *ngFor="let row of rowsDataMovil.rowsTitle; trackBy:trackByTableMovilRowId">
+
+    <div class={{rowActive(isCollapsed(row.id))}}>
+      <div class="row__value--container" *ngFor="let item of row.value; trackBy:trackByTableMovilValue">
+        
+        <div [ngSwitch]="item.dataType">
+
+          <div *ngSwitchCase="DataTypeEnum.collapse" class="row__value--container__value"
+            (click)="item.callBack ? item.callBack(getRowByItem(row.id, item)): null">
+            <leg-south-arrow *ngIf="!isCollapsed(row.id)"></leg-south-arrow>
+            <leg-north-arrow *ngIf="isCollapsed(row.id)"></leg-north-arrow>
+          </div>
+
+          <div *ngSwitchDefault class="row__value--container__value"
+            (click)="item.callBack ? item.callBack(getRowByItem(row.id, item)): null">
+            {{item.value}}
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class={{rowDetailActive(isCollapsed(row.id))}} *ngIf="isCollapsed(row.id)">
+      <div class="row__container__detail__container"
+        *ngFor="let item of getDetailRow(row.id) ; trackBy:trackByTableMovilDetail">
+        <div class="row__container__detail__container__attribute">
+          {{item.attribute}}
+        </div>
+        
+        <div class="row__container__detail__container__value">
+          {{item.value}}
+        </div>
+      </div>
+    </div>
+
+  </div>
